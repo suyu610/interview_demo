@@ -7,6 +7,6 @@ import java.math.BigDecimal;
 
 @Mapper
 public interface DemoMapper {
-    @Insert("insert into result(input,result) values(${input},${result}) on duplicate key update result=${result}")
-    Integer insertResultToDB(BigDecimal input, BigDecimal result);
+    @Insert("insert into result(input,ratio,result) values(#{input},#{ratio},#{result}) on duplicate key update result=#{result}")
+    Integer insertResultToDB(BigDecimal input, BigDecimal ratio, BigDecimal result);
 }
